@@ -21,12 +21,6 @@ def random_split_by_user(df, frac):
     return df_train, df_test
 
 
-# def apply_filter(ratings, how):
-#     df_buckets = ratings.groupby('userId', as_index=False).agg({'rating': [np.size, np.mean]})
-#     df_buckets = df_buckets.drop(df_buckets[df_buckets['rating']['size'] < how].index)
-#     return ratings.loc[ratings['userId'].isin(df_buckets['userId'].unique())]
-
-
 if __name__ == "__main__":
 
     dataset_path = "/home/diego/chat-rerank/dataset/anime/"
