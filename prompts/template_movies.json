@@ -1,0 +1,21 @@
+{
+  "templates": [
+    {
+      "id": "1",
+      "text": "You will be given a ranked list of <top_m> candidate movies, delimited by triple backticks.\nYour task is to select a ranked list of <top_n> movies from this candidate list such that the new list exihibit the highest diversity based on movie genres. Don't provide any additional information.\n\nUse the following format for the output:\n"
+    },
+    {
+      "id": "3",
+      "text": "You are given the following ranked recommendation list of <top_m>> movies for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the diversity score of the list. Do not provide additional information. Strictly use the following format for the output:\n"
+    },
+    {
+      "id": "2",
+      "text": "You will be given a user profile, i.e. a list of <top_p> movies watched by a user, delimited by triple asterisks. Also, you will be given a ranked list of <top_m> recommended movies to this user, delimited by triple backticks.\nYour task is to select a ranked list of <top_n> movies from this recommendation list such that the new list exihibit items that are surprising (unexpected) to the user, based on her profile. Don't provide any additional information. Provide the output in JSON format with the following keys:\nmovie_name\n\n"
+    },
+    {
+      "id": "4",
+      "status": "UNTESTED",
+      "text": "You are given the following user profile, i.e. a list of <top_p> movies watched by a user, delimited by triple asterisks. \n***<user_p>***\n\nYou are also given the following ranked recommendation list of <top_m> movies to this user, delimited by triple backticks. \nYour task is to select a ranked list of <top_n> movies from this recommendation list such that the new list exihibit items that are surprising (unexpected) to the user, based on her profile. Don't provide any additional information. Strictly use the following format for the output:\n"
+    }
+  ]
+}

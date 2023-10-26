@@ -1,0 +1,10 @@
+{
+  "templates": [
+    {
+      "id": "1",
+      "domain": "anime",
+      "llm": "chatgpt",
+      "text": "You will be given a ranked list of <top_m> candidate movies, delimited by triple backticks.\nYour task is to select a ranked list of <top_n> movies from this candidate list such that the new list exihibit the highest diversity based on movie genres. Don't provide any additional information.\n\nUse the following format for the output:\n"
+    }
+  ]
+}

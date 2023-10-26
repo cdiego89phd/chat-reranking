@@ -1,0 +1,21 @@
+You are given a ranked recommendation list of 10 movies for a user, delimited by triple backticks.
+Your task is to re-rank this candidate list and provide a final top-5 recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.
+
+1-> <movie name>
+2-> <movie name>
+3-> <movie name>
+4-> <movie name>
+5-> <movie name>
+
+```
+1. Braveheart
+2. The Fugitive
+3. The Shawshank Redemption
+4. Toy Story
+5. Speed
+6. Babe
+7. Twelve Monkeys
+8. True Lies
+9. Get Shorty
+10. The Mask
+```
