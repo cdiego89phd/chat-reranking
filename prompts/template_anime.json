@@ -4,7 +4,7 @@
       "id": "1",
       "domain": "anime",
       "llm": "chatgpt",
-      "text": "You will be given a ranked list of <top_m> candidate movies, delimited by triple backticks.\nYour task is to select a ranked list of <top_n> movies from this candidate list such that the new list exihibit the highest diversity based on movie genres. Don't provide any additional information.\n\nUse the following format for the output:\n"
+      "text": "You are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n"
     }
   ]
 }

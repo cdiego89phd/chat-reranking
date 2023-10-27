@@ -7,13 +7,13 @@ import numpy as np
 __author__ = 'dcarraro'
 
 
-def random_split_by_user(df, frac):
+def random_split_by_user(df, frac, state):
     """Split the dataset in train and test set in a user way
     frac is the proportion of ratings hold by the test set
     """
 
-    df_test = df.groupby('user_id').apply(lambda x: x.sample(frac=frac)).copy().reset_index(drop=True, level=0)
-    df_train = df_ratings.drop(df_test.index)
+    df_test = df.groupby("user_id").sample(frac=frac, random_state=state)
+    df_train = df.drop(df_test.index)
 
     df_train.reset_index(drop=True, inplace=True)
     df_test.reset_index(drop=True, inplace=True)
@@ -23,9 +23,9 @@ def random_split_by_user(df, frac):
 
 if __name__ == "__main__":
 
-    dataset_path = "/home/diego/chat-rerank/dataset/anime/"
-    output_folder = "/home/diego/chat-rerank/experiments/anime/"
-    dataset_name = "ratings16M.csv"
+    dataset_path = "/home/diego/chat-reranking/dataset/anime/"
+    output_folder = "/home/diego/chat-reranking/experiments/anime/"
+    dataset_name = "ratings17M.csv"
 
     folds = 1
     testset_prop = 0.2
@@ -35,6 +35,9 @@ if __name__ == "__main__":
     base_seed = 555
 
     df_ratings = pd.read_csv(f"{dataset_path}{dataset_name}", sep=",")
+    del df_ratings["is_pos"]
+    df_ratings = df_ratings.sample(frac=1)  # shuffle the data
+    print(len(df_ratings))
 
     for fold in range(folds):
 
@@ -42,7 +45,7 @@ if __name__ == "__main__":
         base_seed += 7
 
         # split the dataset in train/test (user-based split)
-        trainset, testset = random_split_by_user(df_ratings, testset_prop)
+        trainset, testset = random_split_by_user(df_ratings, testset_prop, state=base_seed)
 
         # save the splits...
         out_dir = output_folder + 'fold_' + str(fold) + '/'
@@ -50,11 +53,11 @@ if __name__ == "__main__":
             makedirs(out_dir)
 
         # save users and items in a file
-        out_file = open(output_folder + 'users.csv', 'w')
+        out_file = open(out_dir + 'users.csv', 'w')
         for record in list(df_ratings['user_id'].unique()):
             out_file.write("%s\n" % record)
         out_file.close()
-        out_file = open(output_folder + 'items.csv', 'w')
+        out_file = open(out_dir + 'items.csv', 'w')
         for record in list(df_ratings['item_id'].unique()):
             out_file.write("%s\n" % record)
         out_file.close()
@@ -75,16 +78,13 @@ if __name__ == "__main__":
                 out_file.write(f"{record}\n")
             out_file.close()
             df_sample_test_data = testset[testset["user_id"].isin(test_users)].copy()
-            df_sample_test_data.to_csv(output_folder + 'sample_test_data.csv', index=False, sep='\t', header=False)
+            df_sample_test_data.to_csv(out_dir + 'sample_test_data.csv', index=False, sep='\t', header=False)
             print("There are %d ratings in the sample test set and %d users " % \
                   (len(df_sample_test_data), len(test_users)))
 
         # produce validation data
         if produce_validation:
-            train_val, val = random_split_by_user(trainset, valset_prop)
-
-            # save the splits...
-            out_dir = output_folder + 'fold_' + str(fold) + '/'
+            train_val, val = random_split_by_user(trainset, valset_prop, state=base_seed)
 
             train_val.to_csv(out_dir + 'train_val_data.csv', index=False, sep='\t', header=False)
             val.to_csv(out_dir + 'val_data.csv', index=False, sep='\t', header=False)

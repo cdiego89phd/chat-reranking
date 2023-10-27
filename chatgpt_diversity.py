@@ -161,19 +161,21 @@ def main(args):
     prompt_template = load_prompt_template(args.promptpath, args.prompt_id)
     print(f"{datetime.datetime.now()} -- Prompt template loaded!")
 
-    # load test users
-    test_users = pd.read_csv(f"{args.datasetpath}/fold_{args.fold}/sample_test_users.csv",
-                             sep="\t", names=["userid"])
-
     # load baseline recommendations
     recs = pd.read_csv(f"{args.datasetpath}/recs/baselines/{args.baseline_recs}", sep="\t",
                        names=["userid", "itemid", "rating"])
     recs.drop(labels="rating", axis=1, inplace=True)
-    recs = recs[recs["userid"].isin(test_users["userid"].values)].copy()
+
+    if args.run_with_sample_users:
+        # load test users
+        test_users = pd.read_csv(f"{args.datasetpath}/fold_{args.fold}/sample_test_users.csv",
+                                 sep="\t", names=["userid"])
+        recs = recs[recs["userid"].isin(test_users["userid"].values)].copy()
+
     print(f"{datetime.datetime.now()} -- Baseline recommendations loaded!")
 
     if args.debug_mode:
-        debug_usrs = recs["userid"].unique()[:10]
+        debug_usrs = recs["userid"].unique()[:30]
         recs = recs[recs["userid"].isin(debug_usrs)].copy()
 
     # trim recommendations
@@ -271,6 +273,13 @@ if __name__ == "__main__":
         type=str,
         required=True,
         help="The API KEY for openai"
+    )
+    parser.add_argument(
+        "--run_with_sample_users",
+        default=None,
+        type=int,
+        required=True,
+        help="Whether to run the script with a sample of the test users."
     )
     parser.add_argument(
         "--debug_mode",
