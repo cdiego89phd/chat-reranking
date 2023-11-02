@@ -146,8 +146,8 @@ def query_chatgpt(model: str,
         new_rank = parse_response(response, itemname_to_id)
         reranked_recs.append(new_rank)
 
-        time.sleep(25)
-        print(f"Done {i}/{len(prompts)} users!")
+        time.sleep(20)
+        print(f"{datetime.datetime.now()} -- Done {i}/{len(prompts)} users!")
     return raw_responses, reranked_recs
 
 

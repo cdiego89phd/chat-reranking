@@ -1,0 +1,310 @@
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is to order this list in alphabetical order.
+```
+0.-> Hundred
+1.-> The Millionaire Detective – Balance:UNLIMITED
+2.-> Freaky Highschool
+3.-> Arte
+4.-> Infinite Ryvius
+5.-> Is this A Zombie? of the Dead
+6.-> A Christmas Adventure
+7.-> Junjo Romantica
+8.-> Rokka:Braves of the Six Flowers
+9.-> Wooser's Hand-to-Mouth Life:Awakening Arc
+10.-> Jormungand Season 2:Perfect Order
+11.-> Genshiken
+12.-> Shirobako
+13.-> Scum's Wish
+14.-> Inuyashiki:Last Hero
+15.-> My Name Is Teppei
+16.-> Magical Project S
+17.-> Hand Shakers
+18.-> Tekkaman Blade
+19.-> Pretty Cure
+```
+
+OUTPUT: 
+```
+6.-> A Christmas Adventure
+3.-> Arte
+2.-> Freaky Highschool
+11.-> Genshiken
+17.-> Hand Shakers
+0.-> Hundred
+14.-> Inuyashiki:Last Hero
+4.-> Infinite Ryvius
+5.-> Is this A Zombie? of the Dead
+10.-> Jormungand Season 2:Perfect Order
+7.-> Junjo Romantica
+15.-> My Name Is Teppei
+19.-> Pretty Cure
+8.-> Rokka:Braves of the Six Flowers
+13.-> Scum's Wish
+12.-> Shirobako
+16.-> Magical Project S
+18.-> Tekkaman Blade
+1.-> The Millionaire Detective – Balance:UNLIMITED
+9.-> Wooser's Hand-to-Mouth Life:Awakening Arc
+```
+EVALUATION: "Magical Project S" is in the wrong position
+
+
+
+
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is to order this list in alphabetical order.
+```
+0.-> Hundred
+1.-> The Millionaire Detective – Balance:UNLIMITED
+2.-> Freaky Highschool
+3.-> Arte
+4.-> Infinite Ryvius
+5.-> Is this A Zombie? of the Dead
+6.-> A Christmas Adventure
+7.-> Junjo Romantica
+8.-> Rokka:Braves of the Six Flowers
+9.-> Wooser's Hand-to-Mouth Life:Awakening Arc
+10.-> Jormungand Season 2:Perfect Order
+11.-> Genshiken
+12.-> Shirobako
+13.-> Scum's Wish
+14.-> Inuyashiki:Last Hero
+15.-> My Name Is Teppei
+16.-> Magical Project S
+17.-> Super Wings 2
+18.-> Caribadix
+19.-> Super Wings
+20.-> Caribadix 2nd Season
+```
+
+OUTPUT
+```
+6.-> A Christmas Adventure
+3.-> Arte
+18.-> Caribadix
+20.-> Caribadix 2nd Season
+2.-> Freaky Highschool
+11.-> Genshiken
+0.-> Hundred
+4.-> Infinite Ryvius
+14.-> Inuyashiki:Last Hero
+5.-> Is this A Zombie? of the Dead
+7.-> Junjo Romantica
+10.-> Jormungand Season 2:Perfect Order
+15.-> My Name Is Teppei
+13.-> Scum's Wish
+12.-> Shirobako
+16.-> Magical Project S
+17.-> Super Wings 2
+19.-> Super Wings
+8.-> Rokka:Braves of the Six Flowers
+9.-> Wooser's Hand-to-Mouth Life:Awakening Arc
+1.-> The Millionaire Detective – Balance:UNLIMITED
+```
+EVALUATION: "Super Wings 2" and "Super Wings" should swap positions
+
+
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is rank anime in this list by popularity.
+```
+Tsubasa RESERVoir CHRoNiCLE Season Two
+El-Hazard:The Wanderers
+Gintama Season 2
+Beet the Vandel Buster
+Umamusume:Pretty Derby
+Bobobo-bo Bo-bobo
+GG Bond:Ultimate Battle Prequel
+Rozen Maiden:Zurückspulen
+Cardfight!! Vanguard:Shinemon Arc
+Prince Mackaroo
+Samurai Deeper Kyo
+New Game!!
+Trigun
+ChäoS;Child
+Beautiful Bones -Sakurako's Investigation-
+The Ones Within
+Tiger & Bunny
+Cat Eyed Boy
+Vampire Princess Miyu
+Show By Rock!! 2
+```
+
+OUTPUT
+1. Gintama Season 2
+2. Trigun
+3. New Game!!
+4. Tiger & Bunny
+5. Tsubasa RESERVoir CHRoNiCLE Season Two
+6. Umamusume:Pretty Derby
+7. Rozen Maiden:Zurückspulen
+8. ChäoS;Child
+9. Beautiful Bones -Sakurako's Investigation-
+10. Vampire Princess Miyu
+11. Samurai Deeper Kyo
+12. Bobobo-bo Bo-bobo
+13. Cardfight!! Vanguard:Shinemon Arc
+14. The Ones Within
+15. El-Hazard: The Wanderers
+16. Beet the Vandel Buster
+17. Show By Rock!! 2
+18. GG Bond: Ultimate Battle Prequel
+19. Prince Mackaroo
+20. Cat Eyed Boy
+EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.79 score
+
+
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is rank anime in this list by popularity.
+```
+Super Lovers 2
+Wings of Dragon
+Wagnaria!!3
+What's Up Mechadoc
+UFO Ultramaiden Valkyrie 2:December Nocturne
+You and Me.
+Operation Han-Gyaku-Sei Million Arthur
+My Girlfriend is Shobitch
+March Comes In Like A Lion 2nd Season
+Princess Princess
+Aria the Natural
+Listen to Me, Girls. I Am Your Father!
+Macron One
+Ben-To
+Yatogame-chan Kansatsu Nikki 2
+Pukipuki and Poi
+Skip Beat!
+You're Under Arrest:Fast & Furious
+Red Data Girl
+Evil or Live
+```
+OUTPUT:
+Based on popularity, the ranked list of anime would be:
+
+1. Super Lovers 2
+2. Wagnaria!!3
+3. My Girlfriend is Shobitch
+4. March Comes In Like A Lion 2nd Season
+5. Aria the Natural
+6. Listen to Me, Girls. I Am Your Father!
+7. Ben-To
+8. Skip Beat!
+9. You're Under Arrest: Fast & Furious
+10. Red Data Girl
+11. Wings of Dragon
+12. What's Up Mechadoc
+13. UFO Ultramaiden Valkyrie 2: December Nocturne
+14. You and Me.
+15. Operation Han-Gyaku-Sei Million Arthur
+16. Princess Princess
+17. Macron One
+18. Yatogame-chan Kansatsu Nikki 2
+19. Pukipuki and Poi
+20. Evil or Live
+EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.54 score
+
+
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is rank anime in this list by release date (from newest to oldest).
+```
+Digimon Adventure 02
+Chobits
+Fighting Spirit
+Chrono Crusade
+The Great Passage
+Kiba
+Green Green
+Poccolies
+Sekko Boys
+Teasing Master Takagi-san
+Steel Angel Kurumi
+A Centaur's Life
+Persona:Trinity Soul
+Magical Princess Minky Momo:Hold on to Your Dreams
+Coral Investigates
+The Pet Girl of Sakurasou
+The Affectuous Family
+Earl and Fairy
+Vividred Operation
+Golden Time
+```
+
+OUTPUT
+Here is the list of anime ranked by release date from newest to oldest:
+
+1. Poccolies
+2. The Great Passage
+3. Coral Investigates
+4. Teasing Master Takagi-san
+5. The Pet Girl of Sakurasou
+6. Vividred Operation
+7. Golden Time
+8. A Centaur's Life
+9. Persona: Trinity Soul
+10. The Affectuous Family
+11. Chobits
+12. Steel Angel Kurumi
+13. Chrono Crusade
+14. Fighting Spirit
+15. Kiba
+16. Green Green
+17. Digimon Adventure 02
+18. Magical Princess Minky Momo: Hold on to Your Dreams
+19. Earl and Fairy
+20. Sekko Boys
+EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.70 score
+
+
+You are given a list of 20 anime, delimited by triple backticks.
+Your task is rank anime in this list by release date (from newest to oldest).
+```
+Bakugan:Battle Planet
+Attack on Titan
+Ultramaniac - Magical Girl
+Mrs. Sazae
+Dagashi Kashi
+Caribadix
+Blue Comet SPT Layzner
+Natsume's Book of Friends Season 5
+Erin
+Ori-Princess 2nd Season
+Super Heavy God Gravion Zwei
+Samurai Harem
+Diabolik Lovers
+Ninja Girl & Samurai Master
+IDOLiSH7
+Fate/Zero Season 2
+Maerchen Maedchen
+General Inakappe
+Eternal Alice
+The Girl in Twilight
+```
+
+OUTPUT
+Here is the list of anime ranked by release date from newest to oldest:
+
+1. Bakugan: Battle Planet
+2. Attack on Titan
+3. Ultramaniac - Magical Girl
+4. Mrs. Sazae
+5. Dagashi Kashi
+6. Caribadix
+7. Blue Comet SPT Layzner
+8. Natsume's Book of Friends Season 5
+9. Erin
+10. Ori-Princess 2nd Season
+11. Super Heavy God Gravion Zwei
+12. Samurai Harem
+13. Diabolik Lovers
+14. Ninja Girl & Samurai Master
+15. IDOLiSH7
+16. Fate/Zero Season 2
+17. Maerchen Maedchen
+18. General Inakappe
+19. Eternal Alice
+20. The Girl in Twilight
+EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.34 score
+
+
+
+
+

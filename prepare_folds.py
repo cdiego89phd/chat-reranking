@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     df_ratings = pd.read_csv(f"{dataset_path}{dataset_name}", sep=",")
     del df_ratings["is_pos"]
-    df_ratings = df_ratings.sample(frac=1)  # shuffle the data
+    df_ratings = df_ratings.sample(frac=1, random_state=111)  # shuffle the data
     print(len(df_ratings))
 
     for fold in range(folds):
@@ -73,7 +73,7 @@ if __name__ == "__main__":
         # we also sample their test data (a subsample of the test data)
         if sample_test_users > 0:
             test_users = random.sample(list(df_ratings['user_id'].unique()), sample_test_users)
-            out_file = open(output_folder + 'sample_test_users.csv', 'w')
+            out_file = open(out_dir + 'sample_test_users.csv', 'w')
             for record in list(test_users):
                 out_file.write(f"{record}\n")
             out_file.close()
