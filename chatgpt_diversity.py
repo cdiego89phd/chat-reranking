@@ -9,13 +9,13 @@ import time
 
 MODEL_DICT = {"gpt-3.5-turbo": "chatgpt",
               "gpt-3.5-turbo-0613": "chatgpt0613",
-              "gpt-3.5-instruct": "chatgpt-instruct",
+              "gpt-3.5-turbo-instruct": "instructgpt",
               "gpt-4": "gpt-4"
               }
 
 MODELS = {"gpt-3.5-turbo": "optimized for chat. It should be the latest model available but I am not sure about OpenAI updates policies",
           "gpt-3.5-turbo-0613": "Snapshot of gpt-3.5-turbo from June 13th 2023 with function calling data. Unlike gpt-3.5-turbo, this model will not receive updates, and will be deprecated 3 months after a new version is released.",
-          "gpt-3.5-instruct": "Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions."
+          "gpt-3.5-turbo-instruct": "Similar capabilities as text-davinci-003 but compatible with legacy Completions endpoint and not Chat Completions."
           }
 
 
@@ -29,7 +29,14 @@ def load_helper_dicts(data_folder: str
     with open(f"{filename}", 'rb') as fp:
         itemname_to_id = pickle.load(fp)
 
-    return itemid_to_name, itemname_to_id
+    filename = f"{data_folder}itemid_to_namegenres.pkl"
+    with open(f"{filename}", 'rb') as fp:
+        itemid_to_namegenres = pickle.load(fp)
+    filename = f"{data_folder}itemnamegenres_to_id.pkl"
+    with open(f"{filename}", 'rb') as fp:
+        itemnamegenres_to_id = pickle.load(fp)
+
+    return itemid_to_name, itemname_to_id, itemid_to_namegenres, itemnamegenres_to_id
 
 
 def convert_dataframe(recs: pd.DataFrame,
@@ -116,6 +123,24 @@ def get_response_chatgpt(model: str,
     return output
 
 
+def get_response_instructgpt(model: str,
+                             prompt: str
+                             ) -> str:
+    # model list can be found above
+
+    try:
+        response = openai.Completion.create(
+            model=model,
+            prompt=prompt,
+            max_tokens=600,
+            temperature=0,  # this is the degree of randomness of the model's output
+        )
+        output = response.choices[0]["text"]
+    except Exception as e:
+        output = str(e)
+
+    return output
+
 def parse_response(output: str,
                    itemname_to_id: dict
                    ) -> list:
@@ -140,7 +165,11 @@ def query_chatgpt(model: str,
     raw_responses = []
     reranked_recs = []
     for i, prompt in enumerate(prompts, start=1):
-        response = get_response_chatgpt(model, prompt)
+
+        if model == "gpt-3.5-turbo-instruct":
+            response = get_response_instructgpt(model, prompt)
+        else:
+            response = get_response_chatgpt(model, prompt)
         raw_responses.append(response)
 
         new_rank = parse_response(response, itemname_to_id)
@@ -154,7 +183,12 @@ def query_chatgpt(model: str,
 def main(args):
 
     # load helper dictionaries
-    itemid_to_name, itemname_to_id = load_helper_dicts(args.datasetpath)
+    itemid_to_name, itemname_to_id, itemid_to_namegenres,  itemnamegenres_to_id = load_helper_dicts(args.datasetpath)
+
+    if args.prompt_id in ["5", "6"]:  # the name of the items are augmented with genres
+        itemid_to_name = itemid_to_namegenres
+        itemname_to_id = itemnamegenres_to_id
+
     print(f"{datetime.datetime.now()} -- Helpers loaded!")
 
     # load prompt template (from json)
@@ -175,7 +209,7 @@ def main(args):
     print(f"{datetime.datetime.now()} -- Baseline recommendations loaded!")
 
     if args.debug_mode:
-        debug_usrs = recs["userid"].unique()[:30]
+        debug_usrs = recs["userid"].unique()[:10]
         recs = recs[recs["userid"].isin(debug_usrs)].copy()
 
     # trim recommendations

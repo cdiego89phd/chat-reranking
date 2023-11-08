@@ -23,9 +23,9 @@ def random_split_by_user(df, frac, state):
 
 if __name__ == "__main__":
 
-    dataset_path = "/home/diego/chat-reranking/dataset/anime/"
-    output_folder = "/home/diego/chat-reranking/experiments/anime/"
-    dataset_name = "ratings17M.csv"
+    dataset_path = "/home/diego/chat-reranking/dataset/goodreads/"
+    output_folder = "/home/diego/chat-reranking/experiments/goodreads/"
+    dataset_name = "ratings12M.csv"
 
     folds = 1
     testset_prop = 0.2
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     base_seed = 555
 
     df_ratings = pd.read_csv(f"{dataset_path}{dataset_name}", sep=",")
-    del df_ratings["is_pos"]
+    # del df_ratings["is_pos"]
     df_ratings = df_ratings.sample(frac=1, random_state=111)  # shuffle the data
     print(len(df_ratings))
 
