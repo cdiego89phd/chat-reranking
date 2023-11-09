@@ -1,0 +1,48 @@
+{
+  "templates": [
+    {
+      "id": "1",
+      "domain": "books",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    },
+    {
+      "id": "2",
+      "domain": "books",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the books' diversity in the list. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    },
+    {
+      "id": "3",
+      "domain": "books",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the books' genre-based diversity in the list. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    },
+    {
+      "id": "4",
+      "domain": "books",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and genre-based diversity. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    },
+    {
+      "id": "5",
+      "domain": "books",
+      "objective": "diversity",
+      "notes": "like 1, but an item's id is mapped to the item's name with its genres",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    },
+    {
+      "id": "6",
+      "domain": "books",
+      "objective": "diversity",
+      "notes": "like 4, but an item's id is mapped to the item's name with its genres",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> books for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and genre-based diversity. Strictly use the following format for the output, and don't provide additional information.\n\n"
+    }
+  ]
+}

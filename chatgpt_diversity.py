@@ -209,7 +209,7 @@ def main(args):
     print(f"{datetime.datetime.now()} -- Baseline recommendations loaded!")
 
     if args.debug_mode:
-        debug_usrs = recs["userid"].unique()[:10]
+        debug_usrs = recs["userid"].unique()[:30]
         recs = recs[recs["userid"].isin(debug_usrs)].copy()
 
     # trim recommendations
