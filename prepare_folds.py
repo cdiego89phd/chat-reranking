@@ -25,7 +25,7 @@ if __name__ == "__main__":
 
     dataset_path = "/home/diego/chat-reranking/dataset/goodreads/"
     output_folder = "/home/diego/chat-reranking/experiments/goodreads/"
-    dataset_name = "ratings12M.csv"
+    dataset_name = "ratings8M.csv"
 
     folds = 1
     testset_prop = 0.2
