@@ -1,5 +1,5 @@
 You are given a list of 20 anime, delimited by triple backticks.
-Your task is to order this list in alphabetical order.
+Your task is to rank this list in alphabetical order.
 ```
 0.-> Hundred
 1.-> The Millionaire Detective – Balance:UNLIMITED
@@ -303,6 +303,142 @@ Here is the list of anime ranked by release date from newest to oldest:
 19. Eternal Alice
 20. The Girl in Twilight
 EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.34 score
+
+
+
+INPUT: list A is only Comedy, accordingly to the genres of teh dataset. The second list has more than 10 different genres. List B should be selected
+
+You are given two lists of 10 anime each, list A and list B, delimited by triple backticks.
+Which of the two lists is more diverse?
+
+```
+LIST A:
+Mr. Stain on Junk Alley
+Let's Dance with Papa
+King of Classroom, Yamazaki
+Poo-Neko
+The Adventures of the Little Koala
+Oscar's Oasis
+The Affectuous Family
+Little Wansa
+Hippo and Thomas
+Weekly Shimako
+
+LIST B:
+Hundred
+The Millionaire Detective – Balance:UNLIMITED
+Freaky Highschool
+Arte
+Infinite Ryvius
+Is this A Zombie? of the Dead
+A Christmas Adventure
+Junjo Romantica
+Rokka:Braves of the Six Flowers
+Wooser's Hand-to-Mouth Life:Awakening Arc
+Jormungand Season 2:Perfect Order
+```
+
+OUTPUT:
+Diversity in anime can be assessed based on various factors such as genre, themes, art style, target audience, and more.
+Let's analyze the two lists in terms of genre diversity since it's a common way to measure variety in anime.
+
+List A:
+
+    Mr. Stain on Junk Alley: Stop-motion animation, comedy
+    Let's Dance with Papa: Slice of life, comedy
+    King of Classroom, Yamazaki: Comedy, school
+    Poo-Neko: Adventure, fantasy
+    The Adventures of the Little Koala: Adventure, children
+    Oscar's Oasis: Adventure, comedy
+    The Affectionate Family: Comedy, family
+    Little Wansa: Adventure, children
+    Hippo and Thomas: Adventure, children
+    Weekly Shimako: Slice of life, comedy
+
+List B:
+
+    Hundred: Action, harem
+    The Millionaire Detective – Balance:UNLIMITED: Mystery, drama
+    Freaky Highschool: Supernatural, comedy
+    Arte: Historical, drama
+    Infinite Ryvius: Sci-fi, drama
+    Is this A Zombie? of the Dead: Action, comedy, supernatural
+    A Christmas Adventure: Christmas, adventure
+    Junjo Romantica: Romance, drama
+    Rokka: Braves of the Six Flowers: Fantasy, mystery
+    Wooser's Hand-to-Mouth Life: Awakening Arc: Comedy, slice of life
+    Jormungand Season 2: Perfect Order: Action, adventure
+
+In terms of genre diversity, both lists showcase a variety of genres. However, List B appears to have a broader range
+of genres, including action, mystery, supernatural, historical, romance, and Christmas-themed anime. List A, on the
+other hand, leans more towards adventure, comedy, and slice of life genres. Therefore, List B is more diverse in terms
+of genres.
+
+######################################################################################################################
+INPUT: list A and B are made by items with different genres
+
+You are given two lists of 10 anime each, list A and list B, delimited by triple backticks.
+Which of the two lists is more diverse?
+
+```
+LIST A:
+
+The Millionaire Detective – Balance:UNLIMITED
+Freaky Highschool
+Arte
+Infinite Ryvius
+Is this A Zombie? of the Dead
+A Christmas Adventure
+Junjo Romantica
+Rokka:Braves of the Six Flowers
+Wooser's Hand-to-Mouth Life:Awakening Arc
+
+LIST B:
+Jormungand Season 2:Perfect Order
+Genshiken
+Shirobako
+Scum's Wish
+Inuyashiki:Last Hero
+My Name Is Teppei
+Magical Project S
+Hand Shakers
+Tekkaman Blade
+Pretty Cure
+```
+
+OUTPUT:
+To assess diversity in anime, we can consider various factors such as genre, themes, art style, and target audience.
+Let's analyze the two lists in terms of genre diversity:
+
+List A:
+
+    The Millionaire Detective – Balance:UNLIMITED: Mystery, drama
+    Freaky Highschool: Supernatural, comedy
+    Arte: Historical, drama
+    Infinite Ryvius: Sci-fi, drama
+    Is this A Zombie? of the Dead: Action, comedy, supernatural
+    A Christmas Adventure: Christmas, adventure
+    Junjo Romantica: Romance, drama
+    Rokka: Braves of the Six Flowers: Fantasy, mystery
+    Wooser's Hand-to-Mouth Life: Awakening Arc: Comedy, slice of life
+
+List B:
+
+    Jormungand Season 2: Perfect Order: Action, adventure
+    Genshiken: Comedy, slice of life
+    Shirobako: Slice of life, comedy
+    Scum's Wish: Drama, romance
+    Inuyashiki: Last Hero: Action, drama, sci-fi
+    My Name Is Teppei: Sports, drama
+    Magical Project S: Magic, comedy
+    Hand Shakers: Action, drama, fantasy
+    Tekkaman Blade: Action, sci-fi
+    Pretty Cure: Action, adventure, magic
+
+In terms of genre diversity, both lists showcase a variety of genres. List B, however, seems to have a broader range,
+including action, adventure, comedy, slice of life, drama, romance, sci-fi, magic, and sports. List A also covers
+multiple genres, but it has a stronger emphasis on drama and romance, with fewer distinct genres represented.
+Therefore, List B is more diverse in terms of genres.
 
 
 
