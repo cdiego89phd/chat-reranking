@@ -103,7 +103,7 @@ OUTPUT
 ```
 EVALUATION: "Super Wings 2" and "Super Wings" should swap positions
 
-
+#############################################################################
 You are given a list of 20 anime, delimited by triple backticks.
 Your task is rank anime in this list by popularity.
 ```
@@ -202,7 +202,7 @@ Based on popularity, the ranked list of anime would be:
 20. Evil or Live
 EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.54 score
 
-
+#############################################################################################################
 You are given a list of 20 anime, delimited by triple backticks.
 Your task is rank anime in this list by release date (from newest to oldest).
 ```
@@ -304,9 +304,10 @@ Here is the list of anime ranked by release date from newest to oldest:
 20. The Girl in Twilight
 EVALUATION: accordingly to the rank-biased-overlap metrics, the two lists are similar with 0.34 score
 
+##################################################################################################################
 
-
-INPUT: list A is only Comedy, accordingly to the genres of teh dataset. The second list has more than 10 different genres. List B should be selected
+INPUT: list A is only Comedy, accordingly to the genres of the dataset.
+The second list has more than 10 different genres. List B should be selected
 
 You are given two lists of 10 anime each, list A and list B, delimited by triple backticks.
 Which of the two lists is more diverse?
