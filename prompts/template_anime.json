@@ -50,6 +50,57 @@
       "objective": "diversity",
       "llm": "llama2",
       "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "8",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "llama2",
+      "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the animes' diversity in the list. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "9",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "llama2",
+      "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the animes' genre-based diversity in the list. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "10",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "llama2",
+      "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and genre-based diversity. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "11",
+      "domain": "anime",
+      "objective": "diversity",
+      "notes": "like 7, but an item's id is mapped to the item's name with its genres",
+      "llm": "llama2",
+      "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "12",
+      "domain": "anime",
+      "objective": "diversity",
+      "notes": "like 10, but an item's id is mapped to the item's name with its genres",
+      "llm": "llama2",
+      "text": "[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and genre-based diversity. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n[/INST]"
+    },
+    {
+      "id": "21",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Guidelines to perform the re-ranking are:\nUse the plot summary information of each anime attached in square brackets\nStrictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n"
+    },
+    {
+      "id": "22",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "chatgpt",
+      "text": "You are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the animes' diversity in the list. Guidelines to perform the re-ranking are:\nUse the plot summary information of each anime attached in square brackets\nStrictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n"
     }
   ]
 }

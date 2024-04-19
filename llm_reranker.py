@@ -192,7 +192,14 @@ def load_helper_dicts(data_folder: str
     with open(f"{filename}", 'rb') as fp:
         itemnamegenres_to_id = pickle.load(fp)
 
-    return itemid_to_name, itemname_to_id, itemid_to_namegenres, itemnamegenres_to_id
+    filename = f"{data_folder}itemid_to_nameplot.pkl"
+    with open(f"{filename}", 'rb') as fp:
+        itemid_to_nameplot = pickle.load(fp)
+    filename = f"{data_folder}itemnameplot_to_id.pkl"
+    with open(f"{filename}", 'rb') as fp:
+        itemnameplot_to_id = pickle.load(fp)
+
+    return itemid_to_name, itemname_to_id, itemid_to_namegenres, itemnamegenres_to_id, itemid_to_nameplot, itemnameplot_to_id
 
 
 def convert_dataframe(recs: pd.DataFrame,
@@ -271,11 +278,14 @@ def build_prompts(recs: pd.DataFrame,
 def main(args):
 
     # load helper dictionaries
-    itemid_to_name, itemname_to_id, itemid_to_namegenres,  itemnamegenres_to_id = load_helper_dicts(args.datasetpath)
+    (itemid_to_name, itemname_to_id, itemid_to_namegenres,  itemnamegenres_to_id,
+     itemid_to_nameplots, itemnameplot_to_id) = load_helper_dicts(args.datasetpath)
 
     if args.prompt_id in ["5", "6"]:  # the name of the items are augmented with genres
         itemid_to_name = itemid_to_namegenres
         itemname_to_id = itemnamegenres_to_id
+    if args.prompt_id in ["21", "22"]:
+        itemid_to_name = itemid_to_nameplots
 
     print(f"{datetime.datetime.now()} -- Helpers loaded!")
 
