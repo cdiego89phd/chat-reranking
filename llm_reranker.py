@@ -12,6 +12,7 @@ MODEL_DICT = {"gpt-3.5-turbo": "chatgpt",
               "gpt-3.5-turbo-0613": "chatgpt0613",
               "gpt-3.5-turbo-instruct": "instructgpt",
               "gpt-4": "gpt-4",
+              "gpt-4-1106-preview": "gpt41106",
               "Llama-2-7b-chat-hf": "Llama-2-7b-chat-hf",
               "Llama-2-13b-chat-hf": "Llama-2-13b-chat-hf"
               }
