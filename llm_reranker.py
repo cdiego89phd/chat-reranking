@@ -18,7 +18,8 @@ MODEL_DICT = {"gpt-3.5-turbo": "chatgpt",
 
 DELIMITERS = {"gpt-3.5-turbo-instruct":  ["<", ">"],
               "gpt-3.5-turbo-0613":  ["<", ">"],
-              "Llama-2-7b-chat-hf": ["{", "}"]
+              "Llama-2-7b-chat-hf": ["{", "}"],
+              "gpt-4-1106-preview": ["<", ">"]
               }
 
 MODELS = {"gpt-3.5-turbo": "optimized for chat. It should be the latest model available but I am not sure about OpenAI updates policies",
