@@ -152,7 +152,7 @@ class PromptLlama2(PromptLLM):
             task='text-generation',
             # we pass model parameters here too
             temperature=0.0,  # 'randomness' of outputs, 0.0 is the min and 1.0 the max
-            max_new_tokens=512,  # mex number of tokens to generate in the output
+            max_new_tokens=512,  # max number of tokens to generate in the output
             num_return_sequences=1,
             eos_token_id=self.tokenizer.eos_token_id,
         )
@@ -286,7 +286,7 @@ def main(args):
     if args.prompt_id in ["5", "6"]:  # the name of the items are augmented with genres
         itemid_to_name = itemid_to_namegenres
         itemname_to_id = itemnamegenres_to_id
-    if args.prompt_id in ["21", "22"]:
+    if args.prompt_id in ["21", "22", "31", "32"]:
         itemid_to_name = itemid_to_nameplots
 
     print(f"{datetime.datetime.now()} -- Helpers loaded!")
