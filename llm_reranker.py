@@ -20,6 +20,7 @@ MODEL_DICT = {"gpt-3.5-turbo": "chatgpt",
 DELIMITERS = {"gpt-3.5-turbo-instruct":  ["<", ">"],
               "gpt-3.5-turbo-0613":  ["<", ">"],
               "Llama-2-7b-chat-hf": ["{", "}"],
+              "Llama-2-13b-chat-hf": ["{", "}"],
               "gpt-4-1106-preview": ["<", ">"]
               }
 
