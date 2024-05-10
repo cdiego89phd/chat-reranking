@@ -60,7 +60,7 @@ def prompting_with_dataset(prompt, model, tokenizer, to_cuda=False):
 
 def main(args):
     m = save_model_local(args.model_name, args.to_path, args.auth_token)
-    t = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf",
+    t = AutoTokenizer.from_pretrained(args.model_name,
                                       use_auth_token=args.auth_token)
     print("tokenizer loaded")
     m = load_model_from_local(args.model_path)
