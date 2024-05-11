@@ -122,6 +122,13 @@
       "objective": "diversity",
       "llm": "llama3",
       "text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to balance relevance and diversity. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+    },
+    {
+      "id": "48",
+      "domain": "anime",
+      "objective": "diversity",
+      "llm": "llama2",
+      "text": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n>\nYou are a helpful, respectful and honest assistant.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\nYou are given a ranked recommendation list of <top_m> anime for a user, delimited by triple backticks.\nYour task is to re-rank this candidate list and provide a final top-<top_n> recommendation list where the goal is to maximize the animes' diversity in the list. Strictly use the following format for the output, and don't provide additional information.\n\n<out_format_str>\n\n<candidate_str>\n<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
     }
   ]
 }
