@@ -286,7 +286,7 @@ def main(args):
     (itemid_to_name, itemname_to_id, itemid_to_namegenres,  itemnamegenres_to_id,
      itemid_to_nameplots, itemnameplot_to_id) = load_helper_dicts(args.datasetpath)
 
-    if args.prompt_id in ["5", "6"]:  # the name of the items are augmented with genres
+    if args.prompt_id in ["5", "6", "11", "12", "51", "52"]:  # the name of the items are augmented with genres
         itemid_to_name = itemid_to_namegenres
         itemname_to_id = itemnamegenres_to_id
     if args.prompt_id in ["21", "22", "31", "32"]:
