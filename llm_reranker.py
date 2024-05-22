@@ -326,6 +326,12 @@ def main(args):
     recs["prompt"] = prompts
     print(f"{datetime.datetime.now()} -- Prompts crafted!")
 
+    # calculate the number of total tokens of the prompts
+    n_tokens = 0
+    for p in prompts:
+        n_tokens += len(p)/4
+    print(f"{datetime.datetime.now()} -- Total # of tokens: {n_tokens}!")
+
     if "gpt" in args.model:  # prompt gpt
         openai.api_key = args.openai_key
         prompter = PromptGPT(args.model, prompts, itemname_to_id)
@@ -340,7 +346,7 @@ def main(args):
 
     # save it into file
     output_name = MODEL_DICT[args.model]
-    out_name = f"{args.datasetpath}/recs/reranked/{output_name}-div-p{args.prompt_id}-{args.baseline_recs}.json"
+    out_name = f"{args.datasetpath}/recs/reranked/to_delete/{output_name}-div-p{args.prompt_id}-{args.baseline_recs}.json"
     recs.to_json(out_name, orient="records")
     print(f"{datetime.datetime.now()} -- END!")
 
